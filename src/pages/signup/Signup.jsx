@@ -1,9 +1,32 @@
+import { useState } from 'react';
 import styles from './Signup.module.css'
 
 export default function Signup() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(email, password)
+    }
+
     return (
-        <div>
-            Sign Up
-        </div>
+        <form onSubmit={handleSubmit} className={styles['signup-form']}>
+            <h2>Sign up</h2>
+            <label><span>Email:</span></label>
+            <input
+            type="email" 
+            onChange={(event) => setEmail(event.target.value)}
+            value={email}
+            />
+            <label><span>Password:</span></label>
+            <input
+            type="password"
+            onChange={(event) => setPassword(event.target.value)}
+            value={password}
+            />
+            <button className='btn'>Login</button>
+        </form>
     )
 }
