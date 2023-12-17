@@ -15,24 +15,30 @@ export default function Signup() {
     return (
         <form onSubmit={handleSubmit} className={styles['signup-form']}>
             <h2>Sign up</h2>
-            <label><span>Email:</span></label>
-            <input
-            type="email" 
-            onChange={(event) => setEmail(event.target.value)}
-            value={email}
+            <label>
+                <span>Email:</span>
+                <input
+                type="email" 
+                onChange={(event) => setEmail(event.target.value)}
+                value={email}
             />
-            <label><span>Password:</span></label>
-            <input
-            type="password"
-            onChange={(event) => setPassword(event.target.value)}
-            value={password}
-            />
-            <label><span>Display name:</span></label>
-            <input 
-            type="text"
-            onChange={(event) => setDisplayName(event.target.value)}
-            value={displayName}
-            />
+            </label>
+            <label>
+                <span>Password:</span>
+                <input
+                type="password"
+                onChange={(event) => setPassword(event.target.value)}
+                value={password}
+                />
+            </label>
+            <label>
+                <span>Display name:</span>
+                <input 
+                type="text"
+                onChange={(event) => setDisplayName(event.target.value)}
+                value={displayName}
+                />
+            </label>
             <button className='btn'>Sign up</button>
         </form>
     )
