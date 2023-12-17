@@ -5,6 +5,7 @@ export default function Signup() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [displayName, setDisplayName] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -25,6 +26,12 @@ export default function Signup() {
             type="password"
             onChange={(event) => setPassword(event.target.value)}
             value={password}
+            />
+            <label><span>Display name:</span></label>
+            <input 
+            type="text"
+            onChange={(event) => setDisplayName(event.target.value)}
+            value={displayName}
             />
             <button className='btn'>Login</button>
         </form>
