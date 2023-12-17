@@ -33,7 +33,7 @@ export default function Signup() {
             onChange={(event) => setDisplayName(event.target.value)}
             value={displayName}
             />
-            <button className='btn'>Login</button>
+            <button className='btn'>Sign up</button>
         </form>
     )
 }
