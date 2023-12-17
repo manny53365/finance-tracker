@@ -6,7 +6,7 @@ export default function Navbar() {
     return(
         <nav className={styles.navbar}>
             <ul>
-                <li className={styles.title}>Finance Tracker</li>
+                <li className={styles.title}><Link to='/'>Finance Tracker</Link></li>
 
                 <li><Link to='/login'>Login</Link></li>
                 <li><Link to='/signup'>Sign up</Link></li>
