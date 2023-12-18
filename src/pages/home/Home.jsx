@@ -1,3 +1,5 @@
+import TransactionForm from './TransactionForm'
+
 import styles from './Home.module.css'
 
 export default function Home() {
@@ -7,7 +9,7 @@ export default function Home() {
                 Transaction list
             </div>
             <div className={styles.sidebar}>
-                Transaction form
+                <TransactionForm />
             </div>
         </div>
     )
