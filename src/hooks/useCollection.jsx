@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { projectFirestore } from "../firebase/config";
 
 
-export const useCollection = (collection, _query) => {
+export const useCollection = (collection, _query, _orderBy) => {
     const [documents, setDocuments] = useState(null);
     const [error, setError] = useState(null);
 
@@ -10,11 +10,17 @@ export const useCollection = (collection, _query) => {
     // This simply means that if we don't useRef to pull/store the current value, the array will be seen as "changed/different" on every function call
     const query = useRef(_query).current;
 
+    const orderBy = useRef(_orderBy).current;
+
     useEffect(() => {
         let ref = projectFirestore.collection(collection);
 
         if(query){
             ref = ref.where(...query);
+        };
+
+        if (orderBy){
+            ref = ref.orderBy(...orderBy);
         };
 
         const unsubscribe = ref.onSnapshot((snapshot) => {
@@ -32,7 +38,7 @@ export const useCollection = (collection, _query) => {
 
         return () => unsubscribe();
 
-    }, [collection, query])
+    }, [collection, query, orderBy])
 
     return {documents, error};
 
