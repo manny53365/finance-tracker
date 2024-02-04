@@ -27,3 +27,12 @@
     color: #333333;
     text-decoration: none;
 }
+
+/* mobile screen styling */
+
+@media only screen and (max-width: 768px) {
+    .navbar a {
+        margin-left: 0;
+        padding: 10px;
+    }
+}

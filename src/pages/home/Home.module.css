@@ -89,3 +89,26 @@
   font-size: 0.9em;
   cursor: pointer;
 }
+
+/* mobile screen styling */
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content {
+    margin-top: 10px;
+  }
+
+  .sidebar {
+    padding: 0;
+  }
+
+  .transactions .amount {
+    margin-left: 10px;
+  }
+}
