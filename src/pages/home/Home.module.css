@@ -108,6 +108,10 @@
     padding: 0;
   }
 
+  .transactions li {
+    margin-left: 20px;
+  }
+
   .transactions .amount {
     margin-left: 10px;
   }
